@@ -1,23 +1,113 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>订餐</title>
-	<link rel="stylesheet"  href="lib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css" />
+<html>    
+<head> 
+<meta  http-equiv="Content-Type"  content="text/html;  charset=utf-8"  />   
+  <title>index</title>   
+   
+     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script> 
+    
+</head>    
+<body> 
+<!--  index-->   
+ <div data-role="page" id="index">  
+   <div data-role="header">  
+     <h1>首页</h1>  
+  </div>
+  
+  <div data-role="content"> 
+     <div data-role="controlgroup" > 
+       <a  data-role="button" href="#ordering">帮订餐</a>
+     </div>
+     <div data-role="controlgroup" > 
+       <a data-role="button" href="#order" >看订单</a>  
+      </div>
+  </div>
+</div>
 
-    <script src="lib/jquery.js"></script>
-	<script src="lib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<script src="js/application.js" charset="GBK"></script>  
+<!-- ordering -->
+<div data-role="page" id="ordering">
+   <div data-role="header">  
+      <a href="index.html" data-role="button">Back</a>
+     <h1>订餐</h1>  
+  </div> 
+  <div data-role="content">  
+   <label for="persion">人:</label>
+   <input type="text" name="persion" id="persion"  value="" />
+    <a  data-role="button" href="#chosePerson" data-rel="dialog">选人</a>
 
-    <script src='data/foods.json' type='text/javascript'></script>
-    <script src='data/restaurants.json' type='text/javascript'></script>
-    <script src='data/users.json' type='text/javascript'></script>
+   <label for="restaurent">餐厅:</label>
+   <input type="text" name="name" id="restaurent"  value=""/>
+    <a href="#choseRestuarent" data-role="button" data-rel="dialog">选餐厅</a> 
+    
+    <label for="package">套餐:</label>
+   <input type="text" name="name" id="package"  value=""/>
+    <a href="#chosePackage" data-role="button" data-rel="dialog">选套餐</a>   
+      <a data-role="button" id="submit">确定</a>  
+  </div>  
+</div>
 
-    <script src="js/application.js"></script>
 
-</head>
-<body>
-Write code here.
-</body>
-</body>
-</html>
+<div data-role="page" id="order">
+   <div data-role="header">
+   <a href="index.html" data-role="button">Back</a>  
+     <h1>订单显示</h1>  
+  </div> 
+  <div data-role="content">   
+  <div class="content-primary"> 
+     <ul data-role="listview" id="readyorder">
+     </ul>
+	</div>
+  </div> 
+  <div data-role="footer" id="total">
+  </div> 
+  
+</div>
+
+<!-- chose person -->
+<div data-role="page" id="chosePerson">
+
+   <div data-role="header">
+   <a href="#ordering" data-role="button">Back</a>  
+     <h1>选人</h1>  
+  </div> 
+  <div data-role="content">   
+  <div class="content-primary"> 
+     <ul data-role="listview"  id="personlist">		
+     </ul>
+	</div>
+  </div> 
+</div>
+
+<!-- chose restaurent -->
+<div data-role="page" id="choseRestuarent">
+   <div data-role="header">
+   <a href="#ordering" data-role="button">Back</a>  
+     <h1>选餐厅</h1>  
+  </div> 
+  <div data-role="content">   
+  <div class="content-primary">
+     <ul data-role="listview"  id="reslist">				
+     </ul>
+	</div>
+  </div> 
+</div>
+ 
+ <!-- chose package -->
+<div data-role="page" id="chosePackage">
+   <div data-role="header">
+   <a href="#ordering" data-role="button">Back</a>  
+     <h1>选套餐</h1>  
+  </div> 
+  <div data-role="content">   
+  <div class="content-primary">
+     <ul data-role="listview"  id="packagelist">				
+     </ul>
+	</div>
+  </div> 
+</div>
+ 
+</body>  
+</html>  
